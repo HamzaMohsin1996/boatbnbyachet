@@ -1,0 +1,325 @@
+header{
+    
+    position: relative;
+    z-index: 997;
+   @include custom-shadow;
+    .header-top-bar{
+        .header-bg-blue{
+            padding: 5px 0;
+            text-align: center;
+            @include breakpoint(sm){
+                padding: 5px 15px;
+            }
+        }
+        .header-grey-clr{
+            padding: 5px 0;
+            text-align: center;
+            @include breakpoint(sm){
+                padding: 5px 15px;
+            }
+        }
+        p{
+            font-size: 12px !important;
+        }
+    }
+    .header-wrap{
+        padding:5px 0;
+        background: $white-color;
+        @include breakpoint(sm){
+            padding: 10px 0;
+        }
+        .logo-wrapper{
+            .logo-btn{
+                img{
+                    max-width: 60px;
+                    @include breakpoint(laptop){
+                        max-width: 55px;
+                    }
+                }
+            }
+        }
+        .underline-link-blk{
+            padding:16px 10px;
+            @include breakpoint(laptop){
+                padding:8px 4px;
+                font-size: 12px;
+            }
+            @include breakpoint(lg){
+                padding:8px 2px;
+                font-size: 12px;
+            }
+            &::before{
+                bottom: -5px;
+                height: 4px;
+                @include breakpoint(laptop){
+                    bottom: -10px;
+                }
+                @include breakpoint(lg){
+                    bottom: -12px;
+                }
+                @include breakpoint(sm){
+                    bottom: -17px;
+                    height: 2px;
+                } 
+                @include breakpoint(xs){
+                    bottom: -16px;
+                } 
+            }
+            @include breakpoint(sm){
+                padding: 5px 10px;
+            }
+            @include breakpoint(xs){
+                padding: 5px;
+            }
+        }
+    }
+    .right-content{
+        @include custom-flex-start;
+        >.custom-btn {
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 20px;
+            
+            @include breakpoint(laptop){
+                font-size: 13px;
+                padding: 6px 20px;
+            }
+            @include breakpoint(sm) {
+            font-size: 12px;
+            padding: 4px 14px;
+            }
+            &.white{
+                &.grey-btn {
+                    @include breakpoint(sm){
+                        min-width: 140px;
+                    }
+                    @include breakpoint(xs){
+                        min-width: auto;
+                    }
+                }
+            }
+        }
+    button{
+        margin: 0 5px;
+    }
+    a{
+        margin: 0 5px;
+    }
+    .custom-btn {
+            @include breakpoint(xs){
+                padding: 4px 10px;
+            }
+    }
+    }
+    .center-content{
+        @include custom-flex-start;
+        
+        @include breakpoint(md){
+            display: none;
+        }
+        @include breakpoint(sm){
+            display: none;
+        }
+        &.active-mobile{
+            @include breakpoint(md){
+                position: fixed;
+                top: 0;
+                right:0;
+                bottom: 0;
+                min-width:300px ;
+                background: $white-color;
+             
+                color: $white-color;
+                padding: 30px 30px 0;
+            display: flex;
+                border-top-left-radius: 24px;
+                border-bottom-left-radius: 24px;
+                z-index: 999;
+            }
+            @include breakpoint(sm){
+                position: fixed;
+                top: 0;
+                right:0;
+                bottom: 0;
+                min-width:300px ;
+                background: $white-color;
+             display: flex;
+                color: $white-color;
+                padding: 30px 30px 0;
+                border-top-left-radius: 24px;
+                border-bottom-left-radius: 24px;
+                z-index: 999;
+            }
+            @include breakpoint(xs){
+                min-width: 200px;
+            }
+            .inner-data-scroll{
+                @include custom-flex-start;
+                flex-direction: column;
+                overflow-y: scroll;
+                width: 100%;
+                height: calc(100% - 10px);
+            }
+            a{
+                @include breakpoint(md){
+                    color: $new-black-color !important;
+                    margin: 10px 0;
+                    display: inline-block;
+                    padding: 0 !important;
+                }
+                @include breakpoint(sm){
+                    color: $new-black-color !important;
+                    margin: 10px 0;
+                    display: inline-block;
+                    padding: 0 !important;
+                }
+                &::before{
+                    @include breakpoint(md){
+                        background: $new-black-color !important;
+                      bottom: -10px;
+                    }
+                    @include breakpoint(sm){
+                        background:  $new-black-color  !important;
+                        bottom: -10px;
+                    }
+                }
+                svg{
+                    @include breakpoint(md){
+                        fill: $white-color;
+                    }
+                    @include breakpoint(sm){
+                        fill: $white-color;
+                    }
+                        path{
+                            @include breakpoint(md){
+                                fill: $white-color;
+                            }
+                            @include breakpoint(sm){
+                                fill: $white-color;
+                            }
+                        }
+                        text{
+                            @include breakpoint(md){
+                                fill: $white-color;
+                            }
+                            @include breakpoint(sm){
+                                fill: $white-color;
+                            }
+                        }
+                
+                }
+               
+            }
+          
+            .dropdown-item{
+                @include breakpoint(md){
+                    color: $black-color !important;
+                }
+                @include breakpoint(sm){
+                    color: $black-color !important;
+                }
+                
+            }
+            .round-btn{
+                position: absolute;
+                left: -12px;
+                top: 0;
+                display: block !important;
+    
+            }
+            
+        }
+        .round-btn{
+            display: none !important;
+
+        }
+        .inner-data-scroll{
+            display: flex;
+        }
+        
+    button{
+        margin: 0 5px;
+    }
+    a{
+        margin: 0 4px;
+       
+    }
+    .underline-link-blk {
+        &::before{
+            bottom: -7px;
+            @include breakpoint(laptop){
+                bottom: -11px;
+            }
+            @include breakpoint(lg){
+                bottom: -14px;
+            }
+           
+        }
+    }
+    .custom-dropdown{
+        .dropdown-btn{
+            position: relative;
+            @include breakpoint(md){
+                margin: 0 ;
+            }
+            &::after{
+                content: "\f0d7";
+                font-family: "FontAwesome";
+                position: absolute;
+                right: -10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $new-black-color;
+                border: none;
+                
+            }
+        }
+    }
+    }
+    .underline-link-blk{
+        svg{
+            width: 28px;
+            height: 28px;
+            margin-right: 5px;
+            @include breakpoint(laptop){
+                width: 22px;
+                height: 22px;
+            }
+            @include breakpoint(lg){
+                width: 17px;
+                height: 17px;
+            }
+        }
+        &.active{
+            
+            svg{
+                fill: $brand-secondary-color;
+                path{
+                
+                    fill: $brand-secondary-color;
+                }
+                text{
+                    fill: $brand-secondary-color;
+                }
+            }
+        }
+        &:hover{
+            svg{
+                fill: $brand-secondary-color;
+                path{
+                
+                    fill: $brand-secondary-color;
+                }
+                
+                text{
+                    fill: $brand-secondary-color;
+                }
+            }
+        }
+    }
+}
+.mobile-menu{
+    header{
+        position: unset !important;
+    }
+}
