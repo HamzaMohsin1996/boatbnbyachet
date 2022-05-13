@@ -1,16 +1,28 @@
 import React,{useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import signupImg from '../../assets/images/signup-wrap.png';
+import ConfirmEmail from '../Modal/ConfirmEmail';
 
 const SignupModal = (props) => {
     const { handleShow, handleClose } = props;
-    // const handleClose = () => setShow(false);
+
+    const [show, setShow] = useState(false);
+  
+    // const handleEmailClose = () => setShow(false);
+    const handleEmailShow = () => {
+        setShow(true);
+        handleClose(true)
+    }
+    const closeModal = () => {
+        alert("xyz");
+        setShow(false)
+    }
     return(
+        <>
         <Modal
         show={handleShow}
         onHide={handleClose}
         open={handleShow}
-        onClose={handleClose}
         backdrop="static"
         keyboard={false}
         centered='true'
@@ -19,7 +31,7 @@ const SignupModal = (props) => {
       >
         <div class="modal-content">
       <div class="modal-header no-border">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" closeBtn><i class="fa fa-times"></i></button>
+        <button type="button" class="btn-close"  onClick={handleClose}><i class="fa fa-times"></i></button>
       </div>
       <div class="modal-body">
         <div class="custom-modal-inner">
@@ -88,7 +100,7 @@ const SignupModal = (props) => {
                   </label>
                 </div>
                 <div class="col-sm-12 py-2 pb-3 text-center">
-                  <a href="javascript:void(0)" class="custom-btn blue big-btn"  data-bs-toggle="modal" data-bs-target="#confrm-email" data-bs-dismiss="modal">Agree & Continue </a>
+                  <button class="custom-btn blue big-btn" onClick={handleEmailShow}>Agree & Continue </button>
                 </div>
                 <div class="col-sm-12 text-center">
                   <p class="small-text light">Already have an Account?  <a href="javascript:void(0)" class="underline-blue-link" data-bs-toggle="modal" data-bs-target="#login-modal" data-bs-dismiss="modal">Log in</a></p>
@@ -101,6 +113,8 @@ const SignupModal = (props) => {
      
     </div>
       </Modal>
+      <ConfirmEmail handleEmailShow={show} handleEmailClose={handleClose}/>
+      </>
     )
 }
 export default SignupModal;

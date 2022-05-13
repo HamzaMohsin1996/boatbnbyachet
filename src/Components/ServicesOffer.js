@@ -10,15 +10,15 @@ import City from './Cities';
      }
      Cities = [
         {
-        buttonText: 'Click Me',
+        buttonText: 'Lahore',
         image:Image.ship
        },
        {
-        buttonText: 'Click Me',
+        buttonText: 'Karachi',
         image:Image.ship
        },
        {
-        buttonText: 'Click Me',
+        buttonText: 'Islamabad',
         image:Image.ship
        },
        
