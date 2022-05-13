@@ -1,7 +1,13 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logoimg from '../assets/images/logo.png';
+import SignupModal from '../Components/Modal/SignupModal';
+
 
 const Header = () => {
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return(
         <>
           <header>
@@ -23,8 +29,8 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="right-content">
-                        <a href="" className="underline-link-blk active"  data-bs-toggle="modal" data-bs-target="#become-host-modal"><span>Earn with us</span></a>
-                        <a href="" className="underline-link-blk" data-bs-toggle="modal" data-bs-target="#signup-modal"><span>Sign-up/Sign-in</span></a>
+                        <button className="underline-link-blk active" ><span>Earn with us</span></button>
+                        <button className="underline-link-blk"  onClick={handleShow}><span>Sign-up/Sign-in</span></button>
                         <a href="" className="underline-link-blk"><span>Help</span></a>
 
                     </div>
@@ -32,7 +38,9 @@ const Header = () => {
                 </div>
                 </div>
             </header>
+            <SignupModal handleShow={show} handleClose={handleClose}/>
         </>
     )
 }
 export default Header;
+

@@ -26,17 +26,19 @@
                 height: 24px;
                 border-radius: 50%;
                 background-color:transparent ;
-                color: $white-color ;
+                color: $black-color ;
                 background-image: none !important;
                 margin: 0;
                 opacity: 1;
                 position: relative;
                 padding: 0;
+                @include custom-flex;
                 i{
                     color: $new-black-color !important;
                 }
                 &::before{
                     font-family: "Material Icons";
+                    content: none !important;
                     content: "\e5cd";
                     color: $new-black-color !important;              
                    }
